@@ -1,0 +1,10 @@
+# 实验 06：随机数与 UUID。需要网络拉取依赖。
+[package]
+name = "l06_rand_uuid"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+rand = "0.9"
+uuid = { version = "1", features = ["v4", "v7", "serde"] }

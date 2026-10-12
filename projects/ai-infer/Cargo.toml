@@ -1,0 +1,29 @@
+[package]
+name = "ai-infer"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# 这个 crate **故意不加入任何 workspace**：
+# exercises/ 下只允许 std，而 candle 会拉几十个依赖进来。单独成一个 crate，
+# `cargo run` 才不会被其他框架项目（bevy / sqlx / ort）的依赖解析牵制。
+
+[dependencies]
+# 空。这是**有意的**，不是忘记写。
+#
+# 本教程的运行环境带宽很窄（实测 static.crates.io 约 19 KB/s），而 candle-core
+# 会拖进 gemm / half / rayon / safetensors 等几十个 crate。cargo 的依赖解析是
+# **在下载之前**就要跑完的，实测「只解析、不编译」也会卡住 15 分钟以上且没有任何输出
+# （试过把它塞进用不到的 target 下，cargo 依然会去解析它）。
+# 对一份要求「cargo run 必须真的跑出输出」的教程来说，这是不可接受的默认路径。
+#
+# 所以：默认实现是 src/main.rs 里的**纯 std 教学张量**（零依赖、秒级编译），
+# 它把推理的骨架 —— matmul / broadcast_add / relu / softmax / argmax / 错误处理 / 计时 ——
+# 全部讲清楚，而且 API 命名刻意对齐 candle。
+#
+# 有网络的机器上想跑真正的 candle（README「candle 路线」有逐步说明）：
+#
+#   [dependencies]
+#   candle-core = "0.9"        # 或 0.10 / 0.11，本 demo 用到的 API 一致
+#
+# 然后把 src/main_candle.rs 顶部的说明照做（它是一份可直接编译的完整实现）。

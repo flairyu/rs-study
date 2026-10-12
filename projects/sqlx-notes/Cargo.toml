@@ -1,0 +1,21 @@
+[package]
+name = "sqlx-notes"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# ⚠️ 本 crate 故意 **不属于任何 workspace**（projects/ 下每个 demo 都独立）。
+# 原因见 ../README.md：sqlx / bevy / ort 的依赖很重，混进 workspace 会互相牵制。
+
+[dependencies]
+sqlx = { version = "0.8", features = ["runtime-tokio", "sqlite", "macros", "migrate"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+anyhow = "1"
+
+[features]
+# 默认不启用。启用后多编译一个 `query_as!` 的示例模块，用来演示「编译期校验」。
+# 它需要构建时能连上 DATABASE_URL 指向的 SQLite 文件（或 .sqlx 离线缓存），
+# 所以不作为默认 feature —— 保证 `cargo run` 在任何机器上零配置可跑。
+#
+#   DATABASE_URL="sqlite:notes.db" cargo run --features compile-check
+compile-check = []

@@ -1,0 +1,10 @@
+# 实验 05：数据并行。需要网络拉取依赖。
+[package]
+name = "l05_rayon"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+rayon = "1"
+itertools = "0.14"

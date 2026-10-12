@@ -1,0 +1,18 @@
+/target
+**/target
+**/*.rs.bk
+reports/
+tools/.env
+.DS_Store
+*.swp
+
+# 沙箱内 ~/.cargo 只读，cargo 的本地缓存目录
+.cargo-home/
+
+# projects/sqlx-notes 运行时生成的 SQLite 文件（见该目录 README）
+projects/sqlx-notes/notes.db
+projects/sqlx-notes/notes.db-shm
+projects/sqlx-notes/notes.db-wal
+.cargo-home-ai/
+__pycache__/
+*.pyc

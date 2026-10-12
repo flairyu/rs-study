@@ -1,0 +1,12 @@
+# 实验 08：异步 HTTP 客户端。需要网络拉取依赖，运行时也需要网络。
+[package]
+name = "l08_reqwest"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+reqwest = { version = "0.13", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

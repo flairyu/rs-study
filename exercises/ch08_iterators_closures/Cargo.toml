@@ -1,0 +1,10 @@
+[package]
+name = "ch08_iterators_closures"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

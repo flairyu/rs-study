@@ -1,0 +1,54 @@
+[package]
+name = "bevy-square"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Bevy 版本由 `cargo add bevy` 实测解析得到：0.20.0（2026-10 时 crates.io 上的最新稳定版）。
+#
+# 这里**关掉 default features**，原因见 README「构建准备」一节：
+#   default = ["2d", "3d", "ui", "audio"]
+#   - audio 需要系统库 libasound2-dev
+#   - `2d`/`ui` 里的 default_platform 会带上 bevy_gilrs（手柄），需要 libudev-dev
+# 我们只要「窗口 + 2D 精灵 + 文字」，所以逐项开启。
+[dependencies]
+bevy = { version = "0.20.0", default-features = false, features = [
+    # --- 应用骨架 ---
+    "std",
+    "async_executor",
+    "multi_threaded",
+    "bevy_asset",           # AssetServer / AssetPlugin
+    "bevy_log",             # info! / LogPlugin
+    "bevy_state",           # States / StateScoped（本 demo 未用，留给练习）
+    "reflect_auto_register",
+    # --- 窗口与平台后端 ---
+    "bevy_window",
+    "bevy_winit",
+    "x11",
+    "wayland",
+    # --- 渲染底座 ---
+    "bevy_render",
+    "bevy_core_pipeline",   # Camera2d 所在
+    "bevy_image",
+    "bevy_color",
+    "png",                  # 渲染管线需要的图像格式，不代表"我们会加载 png"
+    # --- 2D 精灵 ---
+    "bevy_sprite",          # Sprite / SpritePlugin（API 层）
+    "bevy_sprite_render",   # 真正把它画出来的 render 层
+    # --- 文字 ---
+    "bevy_text",            # Text2d / TextFont / TextColor
+    "default_font",         # 内置字体：不需要任何外部 ttf 文件
+    # --- 输入 ---
+    "keyboard",             # ButtonInput<KeyCode>
+    "mouse",
+] }
+
+[profile.dev]
+# Bevy 依赖图很大，dev 下完全不优化的话运行时帧率会很难看。
+# opt-level = 1 只优化自己的 crate，编译仍然快。
+opt-level = 1
+
+[profile.dev.package."*"]
+# 依赖（含 bevy）用 opt-level = 3 编译：第一次编译慢一些，但之后运行流畅。
+# 这是 Bevy 官方推荐的 dev 配置。
+opt-level = 3

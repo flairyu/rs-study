@@ -1,0 +1,38 @@
+# 练习工作区：所有章节练习 crate 只依赖标准库，保证离线可编译、可测试。
+# 需要第三方 crate 的实验在 ../labs 下，框架 demo 在 ../projects 下。
+[workspace]
+resolver = "2"
+members = [
+    "ch01_basics",
+    "ch02_control_flow",
+    "ch03_ownership",
+    "ch04_borrowing",
+    "ch05_structs_enums",
+    "ch06_error_handling",
+    "ch07_collections",
+    "ch08_iterators_closures",
+    "ch09_generics_traits",
+    "ch10_lifetimes",
+    "ch11_smart_pointers",
+    "ch12_concurrency",
+    "ch13_async",
+    "ch14_modules_macros",
+    "ch15_testing_unsafe",
+    "ch16_stdlib_tour",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# 练习代码里 `unimplemented!()` 骨架会有大量未使用变量/死代码告警，
+# 统一在 workspace 层关掉，让测试输出保持干净（你自己的代码风格问题请用 clippy 单独检查）。
+[workspace.lints.rust]
+unused_variables = "allow"
+dead_code = "allow"
+unused_mut = "allow"
+unused_imports = "allow"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }

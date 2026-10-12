@@ -1,0 +1,20 @@
+[package]
+name = "axum-todo"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# 显式声明「我自己就是 workspace 根」，防止将来仓库根目录出现 workspace 时
+# 这个 demo 被意外吸进去（Bevy / sqlx 那种重依赖会拖慢整个 workspace）。
+[workspace]
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+# 只在写集成测试时需要：`tower::ServiceExt::oneshot` 能不起真端口直接打 Router。
+# 版本必须与 axum 依赖树里的 tower 一致（axum 0.8 -> tower 0.5）。
+tower = "0.5"

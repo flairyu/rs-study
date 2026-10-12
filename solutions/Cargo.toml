@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = [
+    "ch01_basics",
+    "ch02_control_flow",
+    "ch03_ownership",
+    "ch04_borrowing",
+    "ch05_structs_enums",
+    "ch06_error_handling",
+    "ch07_collections",
+    "ch08_iterators_closures",
+    "ch09_generics_traits",
+    "ch10_lifetimes",
+    "ch11_smart_pointers",
+    "ch12_concurrency",
+    "ch13_async",
+    "ch14_modules_macros",
+    "ch15_testing_unsafe",
+    "ch16_stdlib_tour",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+publish = false

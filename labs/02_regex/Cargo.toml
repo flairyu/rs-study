@@ -1,0 +1,8 @@
+[package]
+name = "l02_regex"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+regex = "1"

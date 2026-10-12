@@ -1,0 +1,19 @@
+# 常用库实验工作区。这里的成员**需要网络**拉取依赖。
+# 与 ../exercises 不同，这里允许（也必须）使用第三方 crate。
+[workspace]
+resolver = "2"
+members = [
+    "01_serde_json",
+    "02_regex",
+    "03_clap",
+    "04_errors",
+    "05_rayon",
+    "06_rand_uuid",
+    "07_tracing",
+    "08_reqwest",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+publish = false

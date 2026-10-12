@@ -1,0 +1,10 @@
+[package]
+name = "ch06_error_handling"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

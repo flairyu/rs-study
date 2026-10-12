@@ -1,0 +1,173 @@
+{
+  "note": "章节唯一索引：check.py 与 ai_review.py 都读这个文件。crate 为 null 表示该章没有自动评测的练习工程。",
+  "chapters": [
+    {
+      "id": "ch01_basics",
+      "order": 1,
+      "group": "syntax",
+      "title": "第 1 章 · 变量、类型与可变性",
+      "doc": "docs/01-syntax/ch01-basics.md",
+      "crate": "ch01_basics"
+    },
+    {
+      "id": "ch02_control_flow",
+      "order": 2,
+      "group": "syntax",
+      "title": "第 2 章 · 函数与控制流",
+      "doc": "docs/01-syntax/ch02-control-flow.md",
+      "crate": "ch02_control_flow"
+    },
+    {
+      "id": "ch03_ownership",
+      "order": 3,
+      "group": "syntax",
+      "title": "第 3 章 · 所有权",
+      "doc": "docs/01-syntax/ch03-ownership.md",
+      "crate": "ch03_ownership"
+    },
+    {
+      "id": "ch04_borrowing",
+      "order": 4,
+      "group": "syntax",
+      "title": "第 4 章 · 引用与借用",
+      "doc": "docs/01-syntax/ch04-borrowing.md",
+      "crate": "ch04_borrowing"
+    },
+    {
+      "id": "ch05_structs_enums",
+      "order": 5,
+      "group": "syntax",
+      "title": "第 5 章 · 结构体、枚举与模式匹配",
+      "doc": "docs/01-syntax/ch05-structs-enums.md",
+      "crate": "ch05_structs_enums"
+    },
+    {
+      "id": "ch06_error_handling",
+      "order": 6,
+      "group": "syntax",
+      "title": "第 6 章 · 错误处理",
+      "doc": "docs/01-syntax/ch06-error-handling.md",
+      "crate": "ch06_error_handling"
+    },
+    {
+      "id": "ch07_collections",
+      "order": 7,
+      "group": "syntax",
+      "title": "第 7 章 · 集合：Vec / String / HashMap",
+      "doc": "docs/01-syntax/ch07-collections.md",
+      "crate": "ch07_collections"
+    },
+    {
+      "id": "ch08_iterators_closures",
+      "order": 8,
+      "group": "syntax",
+      "title": "第 8 章 · 闭包与迭代器",
+      "doc": "docs/01-syntax/ch08-iterators-closures.md",
+      "crate": "ch08_iterators_closures"
+    },
+    {
+      "id": "ch09_generics_traits",
+      "order": 9,
+      "group": "syntax",
+      "title": "第 9 章 · 泛型与 trait",
+      "doc": "docs/01-syntax/ch09-generics-traits.md",
+      "crate": "ch09_generics_traits"
+    },
+    {
+      "id": "ch10_lifetimes",
+      "order": 10,
+      "group": "syntax",
+      "title": "第 10 章 · 生命周期",
+      "doc": "docs/01-syntax/ch10-lifetimes.md",
+      "crate": "ch10_lifetimes"
+    },
+    {
+      "id": "ch11_smart_pointers",
+      "order": 11,
+      "group": "syntax",
+      "title": "第 11 章 · 智能指针与内部可变性",
+      "doc": "docs/01-syntax/ch11-smart-pointers.md",
+      "crate": "ch11_smart_pointers"
+    },
+    {
+      "id": "ch12_concurrency",
+      "order": 12,
+      "group": "syntax",
+      "title": "第 12 章 · 并发",
+      "doc": "docs/01-syntax/ch12-concurrency.md",
+      "crate": "ch12_concurrency"
+    },
+    {
+      "id": "ch13_async",
+      "order": 13,
+      "group": "syntax",
+      "title": "第 13 章 · async / await 与 Future",
+      "doc": "docs/01-syntax/ch13-async.md",
+      "crate": "ch13_async"
+    },
+    {
+      "id": "ch14_modules_macros",
+      "order": 14,
+      "group": "syntax",
+      "title": "第 14 章 · 模块、crate 与宏",
+      "doc": "docs/01-syntax/ch14-modules-macros.md",
+      "crate": "ch14_modules_macros"
+    },
+    {
+      "id": "ch15_testing_unsafe",
+      "order": 15,
+      "group": "syntax",
+      "title": "第 15 章 · 测试、unsafe 与 FFI",
+      "doc": "docs/01-syntax/ch15-testing-unsafe.md",
+      "crate": "ch15_testing_unsafe"
+    },
+    {
+      "id": "ch16_stdlib_tour",
+      "order": 16,
+      "group": "stdlib",
+      "title": "第 16 章 · 标准库巡礼",
+      "doc": "docs/02-stdlib/ch16-stdlib-tour.md",
+      "crate": "ch16_stdlib_tour"
+    },
+    {
+      "id": "libs",
+      "order": 17,
+      "group": "libs",
+      "title": "第 17 章 · 常用第三方库",
+      "doc": "docs/03-libs/ch17-ecosystem.md",
+      "crate": null
+    },
+    {
+      "id": "fw_web",
+      "order": 18,
+      "group": "frameworks",
+      "title": "第 18 章 · Web：axum",
+      "doc": "docs/04-frameworks/ch18-web-axum.md",
+      "crate": null
+    },
+    {
+      "id": "fw_game",
+      "order": 19,
+      "group": "frameworks",
+      "title": "第 19 章 · 游戏：Bevy",
+      "doc": "docs/04-frameworks/ch19-game-bevy.md",
+      "crate": null
+    },
+    {
+      "id": "fw_db",
+      "order": 20,
+      "group": "frameworks",
+      "title": "第 20 章 · 数据库：sqlx",
+      "doc": "docs/04-frameworks/ch20-db-sqlx.md",
+      "crate": null
+    },
+    {
+      "id": "fw_ai",
+      "order": 21,
+      "group": "frameworks",
+      "title": "第 21 章 · AI / 推理：candle 与 ort",
+      "doc": "docs/04-frameworks/ch21-ai-inference.md",
+      "crate": null
+    }
+  ]
+}
