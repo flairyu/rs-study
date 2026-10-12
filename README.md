@@ -182,3 +182,12 @@ python3 tools/check.py --list && python3 tools/check.py ch01_basics
 
 > 前 15 章会很慢，第 3、4 章会让你怀疑人生。挺过去之后，第 9–13 章几乎是免费的
 > ——那些设计全是前三章的必然推论。
+
+
+## 支持作者
+
+如果这个项目对你有帮助，可以考虑请我吃个馒头 ☕
+
+| 微信 | 支付宝 |
+| :---: | :---: |
+| ![微信收款码](assets/wechat.png) | ![支付宝收款码](assets/alipay.png) |
